@@ -1,0 +1,49 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/view/race.gd" id="1_race"]
+[ext_resource type="Script" path="res://scripts/view/flock.gd" id="2_flock"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="3_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/arrival_screen.tscn" id="4_arrival"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sky"]
+sky_top_color = Color(0.56, 0.74, 0.9, 1)
+sky_horizon_color = Color(0.95, 0.9, 0.84, 1)
+ground_bottom_color = Color(0.62, 0.74, 0.55, 1)
+ground_horizon_color = Color(0.95, 0.9, 0.84, 1)
+
+[sub_resource type="Sky" id="Sky_main"]
+sky_material = SubResource("ProceduralSkyMaterial_sky")
+
+[sub_resource type="Environment" id="Environment_main"]
+background_mode = 2
+sky = SubResource("Sky_main")
+ambient_light_source = 3
+ambient_light_energy = 0.6
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.88, 0.9, 0.94, 1)
+fog_density = 0.004
+
+[node name="Race" type="Node3D"]
+script = ExtResource("1_race")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_main")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.8192, 0.4394, -0.3687, 0, 0.6428, 0.766, 0.5736, -0.6275, 0.5265, 0, 20, 0)
+light_color = Color(1, 0.94, 0.84, 1)
+light_energy = 0.8
+
+[node name="Camera3D" type="Camera3D" parent="."]
+keep_aspect = 0
+fov = 62.0
+near = 0.5
+far = 400.0
+
+[node name="Flock" type="Node3D" parent="."]
+script = ExtResource("2_flock")
+
+[node name="Hud" parent="." instance=ExtResource("3_hud")]
+
+[node name="ArrivalScreen" parent="." instance=ExtResource("4_arrival")]

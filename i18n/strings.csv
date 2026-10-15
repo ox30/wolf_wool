@@ -10,10 +10,8 @@ TOAST_DIVISION_REMAINDER_ONE,"Division avec reste : 1 mouton s'égare"
 TOAST_DIVISION_REMAINDER_MANY,"Division avec reste : %d moutons s'égarent"
 TOAST_STONE_BRIDGE_OVERFLOW,"Pont trop chargé : %d moutons tombent à l'eau et regagnent la rive"
 TOAST_BRIDGE_COLLAPSED,Le pont en bois cède !
-BRIDGE_WOOD_SIGN,"Pont en bois
-max %d"
-BRIDGE_STONE_SIGN,"Pont en pierre
-max %d"
+BRIDGE_WOOD_SIGN,Pont en bois · max %d
+BRIDGE_STONE_SIGN,Pont en pierre · max %d
 FINISH_SIGN,Alpage
 ARRIVAL_TITLE_STARS_3,Pile le bon nombre !
 ARRIVAL_TITLE_STARS_2,Presque parfait !
