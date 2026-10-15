@@ -1,0 +1,26 @@
+keys,fr
+LEVEL_01_TITLE,Première montée
+HUD_HERD,Troupeau : %d
+HUD_TARGET,Cible : %d
+START_TITLE,Vers l'alpage !
+START_RULES,"Glisse à gauche ou à droite pour choisir ta porte.
+Arrive avec le bon nombre de moutons : ni trop, ni trop peu."
+START_TAP,Touche l'écran pour partir
+TOAST_DIVISION_REMAINDER_ONE,"Division avec reste : 1 mouton s'égare"
+TOAST_DIVISION_REMAINDER_MANY,"Division avec reste : %d moutons s'égarent"
+TOAST_STONE_BRIDGE_OVERFLOW,"Pont trop chargé : %d moutons tombent à l'eau et regagnent la rive"
+TOAST_BRIDGE_COLLAPSED,Le pont en bois cède !
+BRIDGE_WOOD_SIGN,Pont en bois · max %d
+BRIDGE_STONE_SIGN,Pont en pierre · max %d
+FINISH_SIGN,Alpage
+ARRIVAL_TITLE_STARS_3,Pile le bon nombre !
+ARRIVAL_TITLE_STARS_2,Presque parfait !
+ARRIVAL_TITLE_STARS_1,Pas loin…
+ARRIVAL_TITLE_STARS_0,Pas le bon nombre
+ARRIVAL_TITLE_BRIDGE_COLLAPSED,Le pont a cédé !
+ARRIVAL_TITLE_HERD_LOST,Plus de moutons !
+ARRIVAL_MESSAGE_BRIDGE_COLLAPSED,"Trop de moutons sur le pont en bois. Ils ont regagné la rive à la nage, mais la course est perdue."
+ARRIVAL_MESSAGE_HERD_LOST,Tout le troupeau est rentré à la ferme.
+ARRIVAL_ARRIVED,Arrivés : %d
+ARRIVAL_TARGET,Cible : %d
+ARRIVAL_REPLAY,Rejouer
