@@ -1,0 +1,7 @@
+{
+	"_comment": "Appearance of each gate operation. Keys match GateOp.KIND_IDS.",
+	"add": { "symbol": "+", "color": "#7cc68a" },
+	"sub": { "symbol": "−", "color": "#e9897e" },
+	"mul": { "symbol": "×", "color": "#6fb3d9" },
+	"div": { "symbol": "÷", "color": "#e7b85c" }
+}

@@ -2,6 +2,17 @@
 
 Chaque décision qui change le projet y est notée : date, décision, raison. Les nouvelles entrées s'ajoutent **en haut**, et une décision qui modifie `docs/SPEC.md` est committée avec la mise à jour du cahier des charges.
 
+## 2026-10-15 — Prototype de la course
+
+| # | Décision | Raison |
+| --- | --- | --- |
+| 19 | Tests automatiques avec un petit lanceur maison (`tests/run_tests.gd`), sans addon | Suffit pour tester les règles ; aucune dépendance externe à suivre ni à créditer. |
+| 18 | Données de jeu en JSON (`data/`), validées au chargement | Lisible et modifiable à la main, facile à vérifier dans les tests. |
+| 17 | Barème de l'arrivée : 3 étoiles pour le nombre exact, 2 à ±10 %, 1 à ±25 %, 0 sinon | Récompense le « bon nombre » sans punir un léger écart ; les récompenses viendront avec la ferme. |
+| 16 | Division arrondie à l'inférieur, avec une animation pour chaque mouton perdu ; soustraction plancher à 0 ; troupeau vide = course perdue ; règles expliquées dans le tutoriel | Règle simple et visible : le joueur comprend pourquoi il perd des moutons. |
+| 15 | Deux ponts : le pont en bois cède (course perdue), le pont en pierre ramène le troupeau à son maximum | Deux niveaux de sévérité : l'un oblige à anticiper, l'autre influence la suite de la course. |
+| 14 | Prototype en français seul ; les autres langues arrivent avant la V1 | Le prototype sert à valider le plaisir de jeu ; les textes passent déjà tous par les fichiers de traduction. |
+
 ## 2026-10-15 — Phase d'exploration
 
 | # | Décision | Raison |

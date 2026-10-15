@@ -1,0 +1,21 @@
+{
+	"id": "level_01",
+	"title_key": "LEVEL_01_TITLE",
+	"start": 8,
+	"target": 40,
+	"speed": 5.0,
+	"spacing": 26.0,
+	"star_tolerances": [0.10, 0.25],
+	"obstacles": [
+		{ "type": "gates", "left": { "op": "add", "value": 6 }, "right": { "op": "mul", "value": 2 } },
+		{ "type": "gates", "left": { "op": "sub", "value": 4 }, "right": { "op": "add", "value": 5 } },
+		{ "type": "bridge", "kind": "wood", "max": 20 },
+		{ "type": "gates", "left": { "op": "mul", "value": 3 }, "right": { "op": "div", "value": 2 } },
+		{ "type": "gates", "left": { "op": "add", "value": 9 }, "right": { "op": "sub", "value": 6 } },
+		{ "type": "bridge", "kind": "stone", "max": 40 },
+		{ "type": "gates", "left": { "op": "div", "value": 3 }, "right": { "op": "mul", "value": 2 } },
+		{ "type": "gates", "left": { "op": "add", "value": 8 }, "right": { "op": "sub", "value": 5 } },
+		{ "type": "gates", "left": { "op": "mul", "value": 2 }, "right": { "op": "add", "value": 12 } },
+		{ "type": "gates", "left": { "op": "sub", "value": 10 }, "right": { "op": "div", "value": 2 } }
+	]
+}

@@ -1,6 +1,6 @@
 # Loup & Laine — Cahier des charges
 
-Version 0.1 · 15 octobre 2026 · Florian
+Version 0.2 · 15 octobre 2026 · Florian
 
 > Version initiale exportée du document « Loup & Laine — Cahier des charges » (Claude Docs) le 15.10.2026. Depuis, **ce fichier fait foi** : toute évolution se fait ici, avec une entrée dans `docs/DECISIONS.md`.
 
@@ -34,12 +34,14 @@ Une course dure 1 à 3 minutes : le joueur guide son troupeau de moutons vers l'
 
 - **Portes** : chaque porte applique une opération au troupeau (+, −, ×, ÷). L'écran est en portrait, jouable à une main : le joueur glisse à gauche ou à droite pour choisir.
 - **Contraintes de nombre** :
-  - un pont cède au-delà d'un maximum ;
+  - un pont ne porte qu'un nombre limité de bêtes : le **pont en bois** cède au-delà de son maximum et la course est perdue ; le **pont en pierre** tient, mais les bêtes en trop tombent à l'eau, regagnent la rive et quittent le troupeau, qui repart au maximum ;
   - un pâturage ou un enclos ne nourrit qu'un nombre limité de bêtes ;
   - une source n'abreuve qu'un nombre limité de bêtes ;
   - un loup ne renonce que si le troupeau est assez nombreux et protégé.
 - **Diviseurs utiles** : réduire le troupeau au bon moment devient un choix, pas une punition.
-- **Arrivée** : le nombre de moutons arrivés, comparé à la cible de la course, donne les récompenses (laine, lait, revenus).
+- **Arrondis** : une division arrondit à l'entier inférieur ; les moutons du reste s'égarent, et une animation montre chaque mouton perdu. Une soustraction ne descend jamais sous zéro ; un troupeau vide perd la course.
+- **Tutoriel** : il explique les arrondis et la différence entre pont en bois et pont en pierre.
+- **Arrivée** : le nombre de moutons arrivés, comparé à la cible de la course, donne les récompenses (laine, lait, revenus). Barème : 3 étoiles pour le nombre exact, 2 étoiles à ±10 % de la cible, 1 étoile à ±25 %, 0 au-delà ou si la course est perdue. Les tolérances sont réglables par course.
 - **Protections** : les chiens, clôtures et bergers acquis à la ferme réduisent les pertes aux portes « loup ».
 
 ## L'alpage et la ferme
@@ -104,7 +106,7 @@ Le jeu sort en cinq langues, avec un titre qui garde son allitération dans chac
 
 Google Play accepte une fiche en romanche (code rm) et un titre différent par langue ([Google](https://support.google.com/googleplay/android-developer/answer/9844778?hl=en)).
 
-- **Fichiers de traduction dès le premier jour** : aucun texte écrit en dur dans le code.
+- **Fichiers de traduction dès le premier jour** : aucun texte écrit en dur dans le code. Le prototype n'a que la colonne française ; les quatre autres langues sont ajoutées avant la V1.
 - **Option « Suisse authentique »** (activée par défaut ; le tutoriel explique comment la désactiver dans les paramètres) : certains textes d'ambiance apparaissent dans une autre langue nationale. Panneaux, titres de journaux, remarques des villageois ; une ordonnance peut porter la mention « traduction officielle à suivre ».
 - **Le touriste égaré** : il débarque à l'alpage, parle une autre langue, demande son chemin, photographie les chiens. Bien accueilli, il fait marcher la buvette ; mal accueilli, il laisse un avis grincheux, dans sa langue.
 - **Règle d'or** : une information nécessaire pour jouer est toujours consultable dans la langue du joueur (classeur ou bouton « traduire »).
@@ -128,8 +130,8 @@ Le jeu est développé avec Godot 4 en GDScript, un moteur gratuit et open sourc
 - **Exigence Google Play** : les nouvelles apps et les mises à jour doivent cibler Android 16, API 36 ([GameDev.net](https://gamedev.net/news/5242/)).
 - **Tout en local** : sauvegarde sur le téléphone, aucun serveur, aucun compte, aucune donnée collectée. La déclaration « sécurité des données » du Play Store reste simple.
 - **Code et dépôt** : dépôt GitHub ; scènes et scripts en fichiers texte, versionnés. Claude Code écrit et modifie le code.
-- **Tests** : dans l'éditeur Godot sur le PC personnel, puis sur téléphone via USB.
-- **Données de jeu** : ordonnances, portes, bâtiments et textes dans des fichiers de données, pour ajouter du contenu sans toucher au code.
+- **Tests** : dans l'éditeur Godot sur le PC personnel, puis sur téléphone via USB. Les règles (portes, ponts, résultat, fichiers de données) ont des tests automatiques lancés sans fenêtre (`godot --headless -s tests/run_tests.gd`).
+- **Données de jeu** : ordonnances, portes, bâtiments et textes dans des fichiers de données, pour ajouter du contenu sans toucher au code. Format JSON dans `data/`, validé au chargement ; textes en CSV dans `i18n/` (une colonne par langue).
 
 ## Publication sur Google Play
 
